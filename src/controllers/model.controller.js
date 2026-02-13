@@ -9,7 +9,7 @@ const cadastrar = async (req, res) => {
         data
     });
 
-    res.json(data).status(201).end();
+    res.json(item).status(201).end();
 };
 
 const listar = async (req, res) => {
@@ -35,7 +35,7 @@ const atualizar = async (req, res) => {
     const { id } = req.params;
     const dados = req.body;
     
-    const item = await prisma.modelo.findUnique({
+    const item = await prisma.modelo.update({
         where: { id: Number(id) },
         data: dados
     });
@@ -63,3 +63,4 @@ module.exports = {
 
 
 */
+
