@@ -22,7 +22,7 @@ const buscar = async (req, res) => {
     const { id } = req.params;
     
     const item = await prisma.modelo.findUnique({
-        where: { id },
+        where: { id: Number(id) },
         include: {
             modelo: true
         }
@@ -36,7 +36,7 @@ const atualizar = async (req, res) => {
     const dados = req.body;
     
     const item = await prisma.modelo.findUnique({
-        where: { id },
+        where: { id: Number(id) },
         data: dados
     });
 
@@ -47,7 +47,7 @@ const excluir = async (req, res) => {
     const { id } = req.params;
     
     const item = await prisma.modelo.delete({
-        where: { id }
+        where: { id: Number(id) }
     });
 
     res.json(item).status(200).end();
@@ -60,5 +60,6 @@ module.exports = {
     atualizar,
     excluir
 }
+
 
 */
