@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(cors());
 
 /* Importar e Implementar Rotas */
-// const modelRotas = require("./src/model.routes");
+// const modelRotas = require("./src/routes/model.routes");
 // app.use(modelRotas);
 /* Fim */
 
